@@ -1,0 +1,28 @@
+#!/bin/bash
+
+## Update this info to match
+### BEGIN INIT INFO
+# Provides:          tf2
+# Required-Start:    $local_fs $remote_fs screen-cleanup
+# Required-Stop:     $local_fs $remote_fs
+# Should-Start:      $network
+# Should-Stop:       $network
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: TF2 Server
+# Description:       Controls a TF2 Server
+### END INIT INFO
+
+# Update these (use absolute paths)
+SERVICE='TF2 server' # name used when displaying console messages
+SCREEN='TF2' # name used for the screen instance (should be unique to each server)
+USERNAME='steam' # account name to run the server as
+STEAM_DIR='/opt/steam' # directory where the 'steamcmd.sh' file is located
+STEAM_CMD="$STEAM_DIR/tf2.steam" # file containing the steamcmd script for updating the server
+GAME_DIR="$STEAM_DIR/tf2" # directory containing the server and 'srcds_run' executable
+LOGFILE="$GAME_DIR/tf2.log" # temporary log file logging response for sent commands
+OPTIONS='-game tf +maxplayers 24 -autoupdate -nohltv +map plr_hightower +ip 0.0.0.0' # options to send to 'srcds_run'
+SCRIPT_PATH='/opt/steam/srcds.bash' # location of the 'srcds.bash' script
+
+# runs the script
+. "$SCRIPT_PATH"
