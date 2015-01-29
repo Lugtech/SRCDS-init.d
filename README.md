@@ -29,5 +29,5 @@ There are 5 different commands:
 `# cp srcds.bash /etc/init.d`
 1. Edit/rename the configuration file (`tf2`). There are comments describing each setting.
 1. Register the init.d script. Example (Debian/Ubuntu):  
-`update-rc.d tf2 defaults`
+`# update-rc.d tf2 defaults`
 The server should now start on boot.
