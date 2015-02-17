@@ -8,7 +8,7 @@ execute() {
 }
 
 game_isrunning() {
-  execute screen -ls | grep -q "$SCREEN"
+  execute screen -ls | grep -q "$SCREEN\s"
   return $?
 }
 
